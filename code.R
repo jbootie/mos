@@ -2,9 +2,10 @@
 #load_libraries
 library(leaflet)
 library(leaflet.extras)
+library(htmlwidgets)
+library(rmarkdown)
 
-
-#load csv
+#load the csv of geocoded addresses.
 
 dfm <- read.csv("final_adys3.csv",stringsAsFactor=FALSE)
 
@@ -77,10 +78,9 @@ stroke = FALSE, fillOpacity = 1,dfm$Lon[which(dfm$elem_sch=="SM")], dfm$Lat[whic
 addResetMapButton(map) %>%
 addSearchGoogle(map)
 
+setwd("/home/subudhi/james/mos")
 
-
-adys[grep("292 Winthrop Terrace, South Orange, NJ 07079, USA", adys$g_address),]
-
+saveWidget(map, file="mso.html", selfcontained = FALSE)
 
 
 
