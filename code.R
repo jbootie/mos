@@ -75,8 +75,7 @@ dfm$mid_sch[which(dfm$elem_sch=="SM")], "<br>",
 dfm$high_sch[which(dfm$elem_sch=="SM")]),
 stroke = FALSE, fillOpacity = 1,dfm$Lon[which(dfm$elem_sch=="SM")], dfm$Lat[which(dfm$elem_sch=="SM")]) %>
 
-addResetMapButton(map) %>%
-addSearchGoogle(map)
+addSearchOSM(map, options = searchOptions(autoCollapse = TRUE, minLength = 2))
 
 setwd("/home/subudhi/james/mos")
 
